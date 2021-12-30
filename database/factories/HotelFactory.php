@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class HotelFactory extends Factory
 {
@@ -15,7 +16,8 @@ class HotelFactory extends Factory
     {
         $faker = $this->faker;
         return [
-            'name' => $faker->name,
+            'name' => $name = $faker->name,
+            'slug' => Str::slug($name),
             'postal_code' => $faker->numberBetween(1000000,999999999),
             'city' => $faker->country,
             'address' => $faker->address,

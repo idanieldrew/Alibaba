@@ -14,4 +14,9 @@ class Flight extends Model
     {
         return $this->belongsTo(Airplane::class,'flights','code');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class,'flights','identification_code');
+    }
 }
