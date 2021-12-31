@@ -15,7 +15,7 @@ class CreateFlightUserTable extends Migration
     {
         Schema::create('flight_user', function (Blueprint $table) {
             $table->id('id');
-            $table->unsignedBigInteger('flight_id');
+            $table->unsignedBigInteger('flight_number');
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('flight_id')->references('flight_number')->on('flights');

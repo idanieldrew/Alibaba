@@ -15,10 +15,10 @@ class CreateHotelUserTable extends Migration
     {
         Schema::create('hotel_user', function (Blueprint $table) {
             $table->id('id');
-            $table->unsignedBigInteger('hotel_id');
+            $table->unsignedBigInteger('postal_code_hotel');
             $table->unsignedBigInteger('user_id');
 
-            $table->foreign('hotel_id')->references('postal_code')->on('hotels');
+            $table->foreign('postal_code_hotel')->references('postal_code')->on('hotels');
             $table->foreign('user_id')->references('identification_code')->on('users');
             $table->timestamps();
         });
