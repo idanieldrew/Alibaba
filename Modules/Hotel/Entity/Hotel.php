@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Module\Hotel\Entity;
 
 use App\Models\Concerns\UsesUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

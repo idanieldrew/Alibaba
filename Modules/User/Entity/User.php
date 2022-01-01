@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Module\User\Entity;
 
 use App\Models\Concerns\UsesUuid;
 use Illuminate\Contracts\Auth\MustVerifyEmail;

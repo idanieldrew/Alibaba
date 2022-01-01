@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace Module\Flight\Entity;
 
 use App\Models\Concerns\UsesUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Module\Airplane\Entity\Airplane;
+use Module\User\Entity\User;
 
 class Flight extends Model
 {
