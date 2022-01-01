@@ -177,8 +177,9 @@ return [
         // User Service
         \Module\User\Providers\UserServiceProvider::class,
         // Plane Service
-        \Module\Airplane\Providers\AirplaneServiceProvider::class
-
+        \Module\Airplane\Providers\AirplaneServiceProvider::class,
+        // Hotel Service
+        \Module\Hotel\Providers\HotelServiceProvider::class
     ],
 
     /*

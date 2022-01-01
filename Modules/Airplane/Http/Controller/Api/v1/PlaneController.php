@@ -8,6 +8,6 @@ class PlaneController extends Controller
 {
     public function index()
     {
-        return "hi";
+        return "plane";
     }
 }
