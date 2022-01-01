@@ -179,7 +179,9 @@ return [
         // Plane Service
         \Module\Airplane\Providers\AirplaneServiceProvider::class,
         // Hotel Service
-        \Module\Hotel\Providers\HotelServiceProvider::class
+        \Module\Hotel\Providers\HotelServiceProvider::class,
+        // Flight Service
+        \Module\Flight\Providers\FlightServiceProvider::class
     ],
 
     /*
