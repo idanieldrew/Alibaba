@@ -181,7 +181,9 @@ return [
         // Hotel Service
         \Module\Hotel\Providers\HotelServiceProvider::class,
         // Flight Service
-        \Module\Flight\Providers\FlightServiceProvider::class
+        \Module\Flight\Providers\FlightServiceProvider::class,
+        // Other Service
+        \Module\Relations\Providers\RelationServiceProvider::class
     ],
 
     /*

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Module\Flight\Providers;
 
 use Illuminate\Support\Facades\Route;

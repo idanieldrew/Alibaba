@@ -2,14 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\Airplane;
-use App\Models\AirplaneUser;
-use App\Models\Flight;
-use App\Models\FlightUser;
-use App\Models\Hotel;
-use App\Models\HotelUser;
-use App\Models\User;
 use Illuminate\Database\Seeder;
+use Module\Airplane\Entity\Airplane;
+use Module\Flight\Entity\Flight;
+use Module\Hotel\Entity\Hotel;
+use Module\Relations\Entity\AirplaneUser;
+use Module\Relations\Entity\FlightUser;
+use Module\Relations\Entity\HotelUser;
+use Module\User\Entity\User;
 
 class DatabaseSeeder extends Seeder
 {
