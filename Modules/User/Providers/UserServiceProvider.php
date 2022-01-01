@@ -15,8 +15,8 @@ class UserServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadMigrationsFrom(__DIR__. '/../Database/Migrations');
-        $this->loadFactoriesFrom(__DIR__. '/../Database/Factories');
+        $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
+        $this->loadFactoriesFrom(__DIR__ . '/../Database/factories');
         Route::prefix('user')
             ->namespace($this->namespace)
             ->group( __DIR__. '/../Routes/user.php');
