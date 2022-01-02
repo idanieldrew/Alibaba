@@ -18,7 +18,8 @@ class UserServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
         $this->loadFactoriesFrom(__DIR__ . '/../Database/factories');
-        Route::prefix('user')
+        Route::prefix('api')
+            ->middleware('api')
             ->namespace($this->namespace)
             ->group( __DIR__. '/../Routes/user.php');
     }
