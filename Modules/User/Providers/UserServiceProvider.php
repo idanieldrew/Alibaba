@@ -4,6 +4,7 @@ namespace Module\User\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Module\User\Entity\User;
 
 class UserServiceProvider extends ServiceProvider
 {

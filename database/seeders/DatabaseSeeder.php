@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
 
         // REL FLIGHT & USER
         FlightUser::create([
-            'flight_id' => $filght->flight_number,
+            'flight' => $filght->flight_number,
             'user_id' => $user->identification_code
         ]);
 
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
 
         // REL HOTEL & USER
         HotelUser::create([
-            'hotel_id' => $hotel->postal_code,
+            'postal_code_hotel' => $hotel->postal_code,
             'user_id' => $user->identification_code
         ]);
 

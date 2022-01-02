@@ -4,9 +4,17 @@ namespace Module\Hotel\Database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Module\Hotel\Entity\Hotel;
 
 class HotelFactory extends Factory
 {
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Hotel::class;
+
     /**
      * Define the model's default state.
      *

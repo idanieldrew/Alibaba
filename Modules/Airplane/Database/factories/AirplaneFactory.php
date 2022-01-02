@@ -3,9 +3,17 @@
 namespace Module\Airplane\Database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Module\Airplane\Entity\Airplane;
 
 class AirplaneFactory extends Factory
 {
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Airplane::class;
+
     /**
      * Define the model's default state.
      *
