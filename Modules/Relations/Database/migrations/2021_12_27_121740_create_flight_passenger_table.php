@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAirplaneUserTable extends Migration
+class CreateFlightPassengerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateAirplaneUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('airplane_user', function (Blueprint $table) {
+        Schema::create('flight_passenger', function (Blueprint $table) {
             $table->id('id');
-            $table->unsignedBigInteger('airplane_id');
+            $table->unsignedBigInteger('flight');
             $table->unsignedBigInteger('user_id');
 
-            $table->foreign('airplane_id')->references('code')->on('airplanes');
-            $table->foreign('user_id')->references('identification_code')->on('users');
-
+            $table->foreign('flight')->references('flight_number')->on('flights');
+            $table->foreign('user_id')->references('identification_code')->on('passengers');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateAirplaneUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('airplane_user');
+        Schema::dropIfExists('flight_user');
     }
 }

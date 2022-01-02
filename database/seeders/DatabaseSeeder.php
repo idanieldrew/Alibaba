@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Module\Airplane\Entity\Airplane;
 use Module\Flight\Entity\Flight;
 use Module\Hotel\Entity\Hotel;
+use Module\Passenger\Entity\Passenger;
 use Module\Relations\Entity\AirplaneUser;
 use Module\Relations\Entity\FlightUser;
 use Module\Relations\Entity\HotelUser;
@@ -21,7 +22,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // USER
-        $user = User::factory()->create();
+        User::factory()->create();
+
+        $passengers = Passenger::factory()->create();
 
         // HOTEL
         $hotel = Hotel::factory()->create();
@@ -35,19 +38,19 @@ class DatabaseSeeder extends Seeder
         // REL FLIGHT & USER
         FlightUser::create([
             'flight' => $filght->flight_number,
-            'user_id' => $user->identification_code
+            'user_id' => $passengers->identification_code
         ]);
 
         // REL PLANE & USER
         AirplaneUser::create([
             'airplane_id' => $plane->code,
-            'user_id' =>  $user->identification_code
+            'user_id' =>  $passengers->identification_code
         ]);
 
         // REL HOTEL & USER
         HotelUser::create([
             'postal_code_hotel' => $hotel->postal_code,
-            'user_id' => $user->identification_code
+            'user_id' => $passengers->identification_code
         ]);
 
     }

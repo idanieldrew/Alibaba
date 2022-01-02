@@ -1,19 +1,19 @@
 <?php
 
-namespace Module\User\Database\factories;
+namespace Module\Passenger\Database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Module\User\Entity\User;
+use Module\Passenger\Entity\Passenger;
 
-class UserFactory extends Factory
+class PassengerFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Passenger::class;
 
     /**
      * Define the model's default state.
@@ -23,12 +23,11 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'phone' => $this->faker->numberBetween(91000,99999),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'firstName' => $this->faker->name,
+            'lastName' => $this->faker->lastName,
+            'gender' => $this->faker->boolean,
+            'identification_code' => $this->faker->numberBetween(100000000,999999999),
+            'birthday' => $this->faker->date()
         ];
     }
 

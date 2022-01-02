@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Module\Airplane\Entity\Airplane;
 use Module\Flight\Database\factories\FlightFactory;
-use Module\User\Entity\User;
+use Module\Passenger\Entity\Passenger;
 
 class Flight extends Model
 {
@@ -28,8 +28,8 @@ class Flight extends Model
         return $this->belongsTo(Airplane::class,'flights','code');
     }
 
-    public function users()
+    public function passengers()
     {
-        return $this->belongsToMany(User::class,'flights','identification_code');
+        return $this->belongsToMany(Passenger::class,'flights','identification_code');
     }
 }

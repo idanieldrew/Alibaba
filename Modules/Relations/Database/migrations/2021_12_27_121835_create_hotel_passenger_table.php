@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHotelUserTable extends Migration
+class CreateHotelPassengerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateHotelUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('hotel_user', function (Blueprint $table) {
+        Schema::create('hotel_passenger', function (Blueprint $table) {
             $table->id('id');
             $table->unsignedBigInteger('postal_code_hotel');
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('postal_code_hotel')->references('postal_code')->on('hotels');
-            $table->foreign('user_id')->references('identification_code')->on('users');
+            $table->foreign('user_id')->references('identification_code')->on('passengers');
             $table->timestamps();
         });
     }
