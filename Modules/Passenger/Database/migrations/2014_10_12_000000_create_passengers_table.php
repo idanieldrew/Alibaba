@@ -18,7 +18,7 @@ class CreatePassengersTable extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->boolean('gender');
-            $table->integer('identification_code')->nullable()->unique();
+            $table->unsignedBigInteger('identification_code')->unique();
             $table->timestampTz('birthday');
             $table->timestamps();
         });

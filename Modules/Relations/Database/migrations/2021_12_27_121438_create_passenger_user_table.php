@@ -15,11 +15,8 @@ class CreatePassengerUserTable extends Migration
     {
         Schema::create('passenger_user', function (Blueprint $table) {
             $table->id('id');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('passenger_id');
-
-            $table->foreign('user_id')->references('phone')->on('users');
-            $table->foreign('passenger_id')->references('identification_code')->on('passengers');
+            $table->foreignUuid('userId')->constrained('users');
+            $table->foreignUuid('passengerId')->constrained('passengers');
 
             $table->timestamps();
         });

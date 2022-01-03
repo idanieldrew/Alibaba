@@ -30,8 +30,8 @@ class DatabaseSeeder extends Seeder
 
         // passenger_user
         PassengerUser::create([
-            'user_id' => $user->phone,
-            'passenger_id' => $passengers->identification_code
+            'userId' => $user->id,
+            'passengerId' => $passengers->id
         ]);
 
         // HOTEL
