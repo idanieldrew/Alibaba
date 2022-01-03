@@ -16,10 +16,10 @@ class CreateFlightPassengerTable extends Migration
         Schema::create('flight_passenger', function (Blueprint $table) {
             $table->id('id');
             $table->unsignedBigInteger('flight');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('passenger_id');
 
             $table->foreign('flight')->references('flight_number')->on('flights');
-            $table->foreign('user_id')->references('identification_code')->on('passengers');
+            $table->foreign('passenger_id')->references('identification_code')->on('passengers');
             $table->timestamps();
         });
     }

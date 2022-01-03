@@ -16,10 +16,10 @@ class CreateHotelPassengerTable extends Migration
         Schema::create('hotel_passenger', function (Blueprint $table) {
             $table->id('id');
             $table->unsignedBigInteger('postal_code_hotel');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('passenger_id');
 
             $table->foreign('postal_code_hotel')->references('postal_code')->on('hotels');
-            $table->foreign('user_id')->references('identification_code')->on('passengers');
+            $table->foreign('passenger_id')->references('identification_code')->on('passengers');
             $table->timestamps();
         });
     }

@@ -5,7 +5,7 @@ namespace Module\Relations\Entity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FlightUser extends Model
+class FlightPassenger extends Model
 {
     use HasFactory;
 
