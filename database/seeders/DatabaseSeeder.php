@@ -10,6 +10,7 @@ use Module\Passenger\Entity\Passenger;
 use Module\Relations\Entity\AirplanePassenger;
 use Module\Relations\Entity\FlightPassenger;
 use Module\Relations\Entity\HotelPassenger;
+use Module\Relations\Entity\PassengerUser;
 use Module\User\Entity\User;
 
 class DatabaseSeeder extends Seeder
@@ -22,9 +23,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // USER
-        User::factory()->create();
+        $user = User::factory()->create();
 
+        // Passenger
         $passengers = Passenger::factory()->create();
+
+        // passenger_user
+        PassengerUser::create([
+            'user_id' => $user->phone,
+            'passenger_id' => $passengers->identification_code
+        ]);
 
         // HOTEL
         $hotel = Hotel::factory()->create();
