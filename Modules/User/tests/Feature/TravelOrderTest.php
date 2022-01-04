@@ -13,25 +13,29 @@ class TravelOrderTest extends TestCase
 {
     use RefreshDatabase,WithFaker;
 
-    /** @test */
-    public function travel_selection()
+    public function addFlight()
     {
         $flight = Flight::factory()->create();
 
         $this->get(route('select'),['source' => $flight->source,'destination' => $flight->destination]);
 
-        $this->assertCount(1,array($flight));
+        return $flight;
     }
 
     /** @test */
-    public function add_passenger_for_travel()
+    public function travel_selection()
     {
-        $this->withoutExceptionHandling();
-        $flight = Flight::factory()->create();
+        $this->assertCount(1,array($this->addFlight()));
+    }
 
-        $this->get(route('select'),['source' => $flight->source,'destination' => $flight->destination]);
-
+    /** @test */
+    public function user_can_add_passenger_for_travel()
+    {
+        // login
         $this->login();
+        // add flight and select them
+        $this->addFlight();
+
         $passenger = Passenger::factory()->make();
 
         $this->post(route('add-passenger'), [
@@ -46,6 +50,38 @@ class TravelOrderTest extends TestCase
 
         $this->assertDatabaseHas('passenger_user',[
             'userId' => auth()->user()->id
+        ]);
+    }
+
+    /** @test */
+    public function user_can_add_passengers_for_travel()
+    {
+        // login
+        $this->login();
+        // add flight and select them
+        $this->addFlight();
+
+         $firstPassenger = Passenger::factory()->make();
+         $secondPassenger = Passenger::factory()->make();
+
+
+        $this->post(route('add-passenger'), [
+            'passenger' => [
+                $firstPassenger->attributesToArray(),
+                $secondPassenger->attributesToArray()
+            ]
+        ]);
+
+        $this->assertDatabaseHas('passengers', [
+            'firstName' => $firstPassenger->firstName,
+        ]);
+
+        $this->assertDatabaseHas('passengers', [
+            'lastName' => $secondPassenger->lastName
+        ]);
+
+        $this->assertDatabaseHas('passenger_user',[
+            'userId' => auth()->user()->id,
         ]);
     }
 }
