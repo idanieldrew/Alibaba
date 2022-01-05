@@ -4,31 +4,22 @@ namespace Module\User\Http\Controllers\Api\v1\Order;
 
 use App\Http\Controllers\Controller;
 use Module\Flight\Entity\Flight;
+use Module\User\Repositories\UserRepository;
 
 class FlightOrderController extends Controller
 {
-    public function select()
+    public function select(UserRepository $repository)
     {
         $source = request('source');
         $destination = request('destination');
         $takeoff = request('takeoff');
 
-        $flight = Flight::
-                        where('source','like',"%" . $source . "%")
-                        ->orWhere('destination','like',"%" . $destination . "%")
-                        ->where('takeoff','like',"%" . $takeoff . "%")->paginate();
-        return $flight;
+        $repository->selectFlight($source,$destination,$takeoff);
     }
 
-    public function createPassenger()
+    public function createPassenger(UserRepository $repository)
     {
         $passengers = request('passenger');
-        $data = [];
-        foreach ($passengers as $passenger => $value){
-            $data[] = $value;
-        }
-
-        $x = auth()->user()->passengers()->createMany($data);
-        return $x;
+        $repository->addPassengers($passengers);
     }
 }
