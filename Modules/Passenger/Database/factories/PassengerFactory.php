@@ -9,7 +9,7 @@ use Module\Passenger\Entity\Passenger;
 class PassengerFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * The name of the factories's corresponding model.
      *
      * @var string
      */

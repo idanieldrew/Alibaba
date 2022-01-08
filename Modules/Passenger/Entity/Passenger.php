@@ -16,7 +16,7 @@ class Passenger extends Model
 
     protected $guarded = [];
     /**
-     * Create a new factory instance for the model.
+     * Create a new factories instance for the model.
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory
      */

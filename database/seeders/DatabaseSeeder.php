@@ -11,6 +11,7 @@ use Module\Relations\Entity\AirplanePassenger;
 use Module\Relations\Entity\FlightPassenger;
 use Module\Relations\Entity\HotelPassenger;
 use Module\Relations\Entity\PassengerUser;
+use Module\Ticket\Entity\Ticket;
 use Module\User\Entity\User;
 
 class DatabaseSeeder extends Seeder
@@ -53,6 +54,11 @@ class DatabaseSeeder extends Seeder
         AirplanePassenger::create([
             'airplane_id' => $plane->code,
             'passenger_id' =>  $passengers->identification_code
+        ]);
+
+        Ticket::factory()->create([
+            'type' => false,
+            'class' => true
         ]);
 
         // REL HOTEL & USER

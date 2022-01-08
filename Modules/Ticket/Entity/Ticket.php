@@ -1,15 +1,15 @@
 <?php
 
-namespace Module\Hotel\Entity;
+namespace Module\Ticket\Entity;
 
 use App\Models\Concerns\UsesUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Module\Hotel\Database\factories\HotelFactory;
+use Module\Ticket\Database\factories\TicketFactory;
 
-class Hotel extends Model
+class Ticket extends Model
 {
-    use HasFactory,UsesUuid;
+    use HasFactory, UsesUuid;
 
     /**
      * Create a new factories instance for the model.
@@ -18,6 +18,6 @@ class Hotel extends Model
      */
     protected static function newFactory()
     {
-        return HotelFactory::new();
+        return TicketFactory::new();
     }
 }

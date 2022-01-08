@@ -184,6 +184,8 @@ return [
         \Module\Flight\Providers\FlightServiceProvider::class,
         // Passenger Service
         \Module\Passenger\Providers\PassengerServiceProvider::class,
+        // Ticket service
+        \Module\Ticket\Providers\TicketServiceProvider::class,
         // Other Service
         \Module\Relations\Providers\RelationServiceProvider::class
     ],

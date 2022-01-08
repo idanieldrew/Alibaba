@@ -8,7 +8,7 @@ use Module\Flight\Entity\Flight;
 class FlightFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
+     * The name of the factories's corresponding model.
      *
      * @var string
      */
