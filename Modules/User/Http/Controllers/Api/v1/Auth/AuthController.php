@@ -3,9 +3,11 @@
 namespace Module\User\Http\Controllers\Api\v1\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\TestJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Module\User\Entity\User;
+use Module\User\Jobs\UserRegister;
 
 class AuthController extends Controller
 {
@@ -21,12 +23,18 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        /*$user1 = User::whereEmail('dan@dan.com')->get();
+        UserRegister::dispatch($user1);*/
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
+
+        UserRegister::dispatch($user);
+
 
         return response()->json(['user' => $user], 201);
     }
@@ -54,7 +62,6 @@ class AuthController extends Controller
      */
     public function logout()
     {
-        dd(45);
         auth()->logout();
 
         return response()->json(['message' => 'Successfully logged out']);
