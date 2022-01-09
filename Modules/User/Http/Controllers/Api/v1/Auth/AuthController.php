@@ -23,9 +23,6 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        /*$user1 = User::whereEmail('dan@dan.com')->get();
-        UserRegister::dispatch($user1);*/
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -33,7 +30,8 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        UserRegister::dispatch($user);
+        UserRegister::dispatch($user)
+            ->delay(now()->addMinutes(10));
 
 
         return response()->json(['user' => $user], 201);
