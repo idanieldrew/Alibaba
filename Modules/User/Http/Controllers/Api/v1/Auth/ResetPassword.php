@@ -16,7 +16,8 @@ class ResetPassword extends Controller
     {
         $this->sendMail($request->email);
         return response()->json([
-            'massage' => "check inbox"
+            'massage' => "check inbox",
+            'email' => $request->email
         ],Response::HTTP_OK);
     }
 
