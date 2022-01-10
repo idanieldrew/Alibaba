@@ -14,12 +14,12 @@ class ResetPasswordMail extends Mailable
 
     public function __construct($token)
     {
-        $this->$token = $token;
+        $this->token = $token;
     }
 
     public function build()
     {
-        return $this->view('Mail/reset-password',[
+        return $this->markdown('Mail.reset-password')->with([
             'token' => $this->token
         ]);
     }

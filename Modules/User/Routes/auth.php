@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Module\User\Http\Controllers\Api\v1\Auth\AuthController;
+use Module\User\Http\Controllers\Api\v1\Auth\ChangePassword;
 use Module\User\Http\Controllers\Api\v1\Auth\ResetPassword;
 
 Route::group(['prefix' => 'auth'], function (){
@@ -17,4 +18,7 @@ Route::group(['prefix' => 'auth'], function (){
 
         // Reset Password
         Route::post('/reset-password',[ResetPassword::class,'resetPasswordMail'])->name('reset-password');
+
+        // Change Password
+        Route::post('/change-password',[ChangePassword::class,'changePassword'])->name('change-password');
 });
