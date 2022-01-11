@@ -1,5 +1,3 @@
-
-
 @component('mail::message')
     # Reset Password
 
