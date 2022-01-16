@@ -8,7 +8,6 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Module\User\Entity\User;
 
-
 class ChangePasswordController extends Controller
 {
     public function passwordResetProcess(Request $request){
