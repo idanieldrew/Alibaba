@@ -11,7 +11,6 @@ class CrudController extends Controller
 {
     public function index()
     {
-        dd('ok');
         $flights = Flight::paginate();
 
         return $flights;

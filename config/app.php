@@ -186,6 +186,8 @@ return [
         \Module\Passenger\Providers\PassengerServiceProvider::class,
         // Ticket service
         \Module\Ticket\Providers\TicketServiceProvider::class,
+        // Panel service
+        \Module\Panel\Providers\PanelServiceProvider::class,
         // Other Service
         \Module\Relations\Providers\RelationServiceProvider::class
     ],

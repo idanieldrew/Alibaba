@@ -13,6 +13,8 @@ class Flight extends Model
 {
     use HasFactory,UsesUuid;
 
+    protected  $guarded = [];
+
     /**
      * Create a new factories instance for the model.
      *
