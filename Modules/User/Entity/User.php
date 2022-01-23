@@ -19,6 +19,30 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable,UsesUuid;
 
+    /***ROLE***/
+
+    const TYPE_SUPER = 'super';
+    const TYPE_ADMIN = 'admin';
+    const TYPE_USER = 'user';
+    const TYPES = [self::TYPE_SUPER,self::TYPE_ADMIN,self::TYPE_USER];
+
+    public function isSuper()
+    {
+        return $this->type = self::TYPE_SUPER;
+    }
+
+    public function isAdmin()
+    {
+        return $this->type = self::TYPE_ADMIN;
+    }
+
+    public function isUser()
+    {
+        return $this->type = self::TYPE_USER;
+    }
+
+    /*** END_ROLE***/
+
     /**
      * The attributes that are mass assignable.
      *
