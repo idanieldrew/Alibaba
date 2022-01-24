@@ -17,7 +17,7 @@ class CreateAirplanesTable extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->text('details');
-            $table->integer('code')->unique();
+            $table->unsignedBigInteger('code')->unique();
             $table->boolean('floor');
             $table->timestamps();
         });

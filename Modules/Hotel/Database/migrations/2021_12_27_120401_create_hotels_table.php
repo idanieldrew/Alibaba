@@ -17,7 +17,7 @@ class CreateHotelsTable extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('slug');
-            $table->integer('postal_code')->unique();
+            $table->unsignedBigInteger('postal_code')->unique();
             $table->string('city');
             $table->text('address');
             $table->integer('room_number');

@@ -18,8 +18,8 @@ class CreateAirplanePassengerTable extends Migration
             $table->unsignedBigInteger('airplane_id');
             $table->unsignedBigInteger('passenger_id');
 
-            $table->foreign('airplane_id')->references('code')->on('airplanes');
             $table->foreign('passenger_id')->references('identification_code')->on('passengers');
+            $table->foreign('airplane_id')->references('code')->on('airplanes');
 
             $table->timestamps();
         });
