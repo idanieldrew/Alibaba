@@ -3,7 +3,6 @@
 namespace Module\User\Http\Controllers\Api\v1\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\TestJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Module\User\Entity\User;
@@ -32,7 +31,6 @@ class AuthController extends Controller
 
         UserRegister::dispatch($user)
             ->delay(now()->addMinutes(10));
-
 
         return response()->json(['user' => $user], 201);
     }
