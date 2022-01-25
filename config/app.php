@@ -184,9 +184,11 @@ return [
         \Module\Flight\Providers\FlightServiceProvider::class,
         // Passenger Service
         \Module\Passenger\Providers\PassengerServiceProvider::class,
-        // Ticket service
+        // Ticket Service
         \Module\Ticket\Providers\TicketServiceProvider::class,
-        // Panel service
+        // Question Service
+        \Module\Question\Providers\QuestionServiceProvider::class,
+        // Panel Service
         \Module\Panel\Providers\PanelServiceProvider::class,
         // Other Service
         \Module\Relations\Providers\RelationServiceProvider::class
