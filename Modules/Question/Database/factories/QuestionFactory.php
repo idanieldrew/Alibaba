@@ -22,7 +22,8 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-
+            'question' => $this->faker->paragraph,
+            'answer' => $this->faker->paragraph
         ];
     }
 

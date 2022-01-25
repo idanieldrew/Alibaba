@@ -7,6 +7,7 @@ use Module\Airplane\Entity\Airplane;
 use Module\Flight\Entity\Flight;
 use Module\Hotel\Entity\Hotel;
 use Module\Passenger\Entity\Passenger;
+use Module\Question\Entity\Question;
 use Module\Relations\Entity\AirplanePassenger;
 use Module\Relations\Entity\FlightPassenger;
 use Module\Relations\Entity\HotelPassenger;
@@ -66,5 +67,8 @@ class DatabaseSeeder extends Seeder
             'postal_code_hotel' => $hotel->postal_code,
             'passenger_id' => $passengers->identification_code
         ]);
+
+        // Question module
+        Question::factory()->create();
     }
 }
