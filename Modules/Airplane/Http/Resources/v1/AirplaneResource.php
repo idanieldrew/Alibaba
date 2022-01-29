@@ -19,7 +19,6 @@ class AirplaneResource extends JsonResource
             'details' => $this->details,
             'code' => $this->code,
             'floor' => $this->floor,
-            'created_at' => $this->created_at,
         ];
     }
 }
