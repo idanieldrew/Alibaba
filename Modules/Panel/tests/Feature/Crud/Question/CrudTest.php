@@ -2,17 +2,35 @@
 
 namespace Module\Panel\tests\Feature\Crud\Question;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Module\Question\Entity\Question;
 use Tests\TestCase;
 
 class CrudTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     public function see_all_questions()
     {
-        $questions = Question::factory()->create();
+        $firstQuestions = Question::factory()->create();
+        $secondQuestions = Question::factory()->create();
 
         $this->get(route('question.index'))
-            ->assertSee($questions->answer);
+            ->assertSee($firstQuestions->answer)
+            ->assertSee($secondQuestions->question);
+    }
+
+    /** @test */
+    public function create_question()
+    {
+        $question = Question::factory()->create();
+
+        $this->post(route('question.store'),$question->attributesToArray());
+
+        $this->assertDatabaseHas('questions', [
+            'answer' => $question->answer,
+             'question' => $question->question
+            ]);
     }
 }

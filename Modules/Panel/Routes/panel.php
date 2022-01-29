@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Module\Panel\Http\Controller\Api\v1\Flight\CrudController;
+use Module\Panel\Http\Controller\Api\v1\Question\CrudController as Question;
 
 /*** Flight ***/
 
@@ -21,4 +22,8 @@ Route::put('/flights',[CrudController::class,'update'])->name('flight.update');
 
 /*** Question ***/
 
-Route::get('/questions',[\Module\Panel\Http\Controller\Api\v1\Question\CrudController::class,'index'])->name('question.index');
+// See all question
+Route::get('/questions',[Question::class,'index'])->name('question.index');
+
+// Create question
+Route::post('/create-question',[Question::class,'store'])->name('question.store');

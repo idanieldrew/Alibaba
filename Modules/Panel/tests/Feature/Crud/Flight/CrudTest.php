@@ -57,7 +57,6 @@ class CrudTest extends TestCase
         $this->assertEquals(123,$flight->flight_number);
     }
 
-    /** @test */
   /*  public function a_flight_requires_a_flight_number()
     {
         $flight = Flight::factory()->make(['flight_number' => null]);
