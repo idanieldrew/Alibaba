@@ -1,6 +1,6 @@
 <?php
 
-namespace Module\Airplane\Http\Resources\v1;
+namespace Module\Ticket\Http\Resources\v1;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 

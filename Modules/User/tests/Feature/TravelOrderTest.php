@@ -33,6 +33,7 @@ class TravelOrderTest extends TestCase
     {
         // login
         $this->login();
+
         // add flight and select them
         $this->addFlight();
 
