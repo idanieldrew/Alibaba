@@ -24,8 +24,7 @@ class HotelFactory extends Factory
     {
         $faker = $this->faker;
         return [
-            'name' => $name = $faker->name,
-            'slug' => Str::slug($name),
+            'name' => $faker->name,
             'postal_code' => $faker->numberBetween(1000000,999999999),
             'city' => $faker->country,
             'address' => $faker->address,
