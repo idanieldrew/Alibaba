@@ -4,6 +4,8 @@ namespace Module\Hotel\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Module\Hotel\Entity\Hotel;
+use Module\Hotel\Observers\HotelObserver;
 
 class HotelServiceProvider extends ServiceProvider
 {
@@ -20,5 +22,10 @@ class HotelServiceProvider extends ServiceProvider
         Route::prefix('hotel')
             ->namespace($this->namespace)
             ->group( __DIR__. '/../Routes/hotel.php');
+    }
+
+    public function boot()
+    {
+        Hotel::observe(HotelObserver::class);
     }
 }

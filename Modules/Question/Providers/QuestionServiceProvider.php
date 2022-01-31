@@ -9,6 +9,7 @@ use Module\User\Entity\User;
 class QuestionServiceProvider extends ServiceProvider
 {
     protected $namespace = 'Module\Question\Http\Controllers';
+
     /**
      * Register any application services.
      *
