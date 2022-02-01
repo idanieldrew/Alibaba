@@ -9,6 +9,6 @@ class QuestionController extends Controller
 {
     public function index(QuestionRepository $repository)
     {
-        $repository->index();
+        return $repository->index();
     }
 }
