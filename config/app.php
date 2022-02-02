@@ -190,6 +190,8 @@ return [
         \Module\Question\Providers\QuestionServiceProvider::class,
         // Panel Service
         \Module\Panel\Providers\PanelServiceProvider::class,
+        // Contact Service
+        \Module\Contact\Providers\ContactServiceProvider::class,
         // Other Service
         \Module\Relations\Providers\RelationServiceProvider::class
     ],
