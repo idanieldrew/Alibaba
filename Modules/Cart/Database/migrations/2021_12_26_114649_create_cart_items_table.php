@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTicketsTable extends Migration
+class CreateCartItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets', function (Blueprint $table) {
+        Schema::create('cart_Items', function (Blueprint $table) {
             $table->id('id');
-            $table->boolean('type');
-            $table->boolean('class');
-            $table->time('time');
+            $table->foreignId('ticket_id')->constrained();
+            $table->foreignId('cart_id')->constrained();
+            $table->integer('count');
+            $table->float('price')->unique();
+            $table->float('total');
+            $table->boolean('active');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateTicketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tickets');
+        Schema::dropIfExists('cart_Items');
     }
 }

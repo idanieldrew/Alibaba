@@ -192,6 +192,8 @@ return [
         \Module\Panel\Providers\PanelServiceProvider::class,
         // Contact Service
         \Module\Contact\Providers\ContactServiceProvider::class,
+        // Cart Service
+        \Module\Cart\Providers\CartServiceProvider::class,
         // Other Service
         \Module\Relations\Providers\RelationServiceProvider::class
     ],

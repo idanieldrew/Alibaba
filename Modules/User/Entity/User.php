@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Module\Airplane\Entity\Airplane;
+use Module\Airplane\Entity\Cart;
 use Module\Flight\Entity\Flight;
 use Module\Hotel\Entity\Hotel;
 use Module\Passenger\Entity\Passenger;
@@ -124,4 +125,10 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(Passenger::class,'passenger_user','userId','passengerId');
     }
+
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
+
 }
