@@ -1,16 +1,15 @@
 <?php
 
-namespace Module\Airplane\Entity;
+namespace Module\Cart\Entity;
 
-use App\Models\Concerns\UsesUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Module\Airplane\Database\factories\CartFactory;
-use Module\User\Entity\User;
+use Module\Cart\Database\factories\CartFactory;
+use Module\Passenger\Entity\Passenger;
 
 class Cart extends Model
 {
-    use HasFactory,UsesUuid;
+    use HasFactory;
 
     /**
      * Create a new factories instance for the model.
@@ -22,9 +21,9 @@ class Cart extends Model
         return CartFactory::new();
     }
 
-    public function user()
+    public function passenger()
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne(Passenger::class,'identification_code','passengerId');
     }
 
     public function cartItems()

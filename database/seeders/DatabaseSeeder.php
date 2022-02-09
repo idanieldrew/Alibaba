@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Module\Airplane\Entity\Airplane;
+use Module\Cart\Entity\Cart;
 use Module\Contact\Entity\Contact;
 use Module\Flight\Entity\Flight;
 use Module\Hotel\Entity\Hotel;
@@ -74,5 +75,8 @@ class DatabaseSeeder extends Seeder
 
         // Contact module
         Contact::factory()->create();
+
+        // Cart
+        $passengers->cart()->save(Cart::factory()->make());
     }
 }

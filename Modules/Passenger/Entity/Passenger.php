@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Module\Cart\Entity\Cart;
 use Module\Passenger\Database\factories\PassengerFactory;
 use Module\User\Entity\User;
 
@@ -28,5 +29,10 @@ class Passenger extends Model
     public function users()
     {
         return $this->belongsToMany(User::class,'passenger_user','passengerId');
+    }
+
+    public function cart()
+    {
+        return $this->hasOne(Cart::class,'passengerId','identification_code');
     }
 }
