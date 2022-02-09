@@ -13,7 +13,7 @@ class CreateCartItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cart_Items', function (Blueprint $table) {
+        Schema::create('cartItems', function (Blueprint $table) {
             $table->id('id');
             $table->foreignId('ticket_id')->constrained();
             $table->foreignId('cart_id')->constrained();
@@ -32,6 +32,6 @@ class CreateCartItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cart_Items');
+        Schema::dropIfExists('cartItems');
     }
 }

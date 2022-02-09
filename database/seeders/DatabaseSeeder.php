@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Module\Airplane\Entity\Airplane;
 use Module\Cart\Entity\Cart;
+use Module\Cart\Entity\CartItem;
 use Module\Contact\Entity\Contact;
 use Module\Flight\Entity\Flight;
 use Module\Hotel\Entity\Hotel;
@@ -59,7 +60,7 @@ class DatabaseSeeder extends Seeder
             'passenger_id' =>  $passengers->identification_code
         ]);
 
-        Ticket::factory()->create([
+        $ticket = Ticket::factory()->create([
             'type' => false,
             'class' => true
         ]);
@@ -77,6 +78,10 @@ class DatabaseSeeder extends Seeder
         Contact::factory()->create();
 
         // Cart
-        $passengers->cart()->save(Cart::factory()->make());
+        $cart = $passengers->cart()->save(Cart::factory()->make());
+
+        $cart->cartItems()->save(CartItem::factory()->make([
+            'ticket_id' => $ticket->id
+        ]));
     }
 }

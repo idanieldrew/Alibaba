@@ -1,15 +1,16 @@
 <?php
 
-namespace Module\Airplane\Entity;
+namespace Module\Cart\Entity;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Module\Airplane\Database\factories\CartItemFactory;
+use Module\Cart\Database\factories\CartItemFactory;
 use Module\Flight\Entity\Flight;
 use Module\Ticket\Entity\Ticket;
 
 class CartItem extends Model
 {
+    protected $table = 'cartItems';
     use HasFactory;
 
     /**
@@ -32,8 +33,8 @@ class CartItem extends Model
         return $this->belongsTo(Cart::class);
     }
 
-    public function tickets()
+    public function ticket()
     {
-        return $this->hasMany(Ticket::class);
+        return $this->belongsTo(Ticket::class);
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Module\Airplane\Database\factories;
+namespace Module\Cart\Database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Module\Airplane\Entity\CartItem;
+use Module\Cart\Entity\CartItem;
 
 class CartItemFactory extends Factory
 {
