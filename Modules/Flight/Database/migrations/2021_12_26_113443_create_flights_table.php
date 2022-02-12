@@ -21,6 +21,7 @@ class CreateFlightsTable extends Migration
             $table->string('source');
             $table->string('destination');
             $table->integer('passengers');
+            $table->bigInteger('price');
             $table->timestamps();
         });
     }

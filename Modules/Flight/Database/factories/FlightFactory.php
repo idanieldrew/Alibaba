@@ -22,12 +22,13 @@ class FlightFactory extends Factory
     public function definition()
     {
         return [
-            'flight_number' => $this->faker->numberBetween('10000','99999'),
+            'flight_number' => $this->faker->numberBetween(10000,99999),
             'landing' => $this->faker->time(),
             'takeoff' => $this->faker->time(),
             'source' => $this->faker->country,
             'destination' => $this->faker->country,
-            'passengers' => $this->faker->numberBetween(50,500)
+            'passengers' => $this->faker->numberBetween(50,500),
+            'price' => $this->faker->numberBetween(500000,10000000)
         ];
     }
 }
