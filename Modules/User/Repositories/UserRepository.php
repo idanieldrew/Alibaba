@@ -3,6 +3,7 @@
 namespace Module\User\Repositories;
 
 use Module\Flight\Entity\Flight;
+use Module\Passenger\Http\Resources\v1\PassengerCollection;
 
 class UserRepository
 {
@@ -27,7 +28,8 @@ class UserRepository
             $data[] = $value;
         }
 
-        $x = auth()->user()->passengers()->createMany($data);
-        return $x;
+        auth()->user()->passengers()->createMany($data);
+
+        return new PassengerCollection($passengers);
     }
 }

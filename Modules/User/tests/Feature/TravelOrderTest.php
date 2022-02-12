@@ -65,7 +65,6 @@ class TravelOrderTest extends TestCase
          $firstPassenger = Passenger::factory()->make();
          $secondPassenger = Passenger::factory()->make();
 
-
         $this->post(route('add-passenger'), [
             'passenger' => [
                 $firstPassenger->attributesToArray(),

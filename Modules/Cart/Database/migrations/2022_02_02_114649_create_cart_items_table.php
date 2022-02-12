@@ -15,8 +15,9 @@ class CreateCartItemsTable extends Migration
     {
         Schema::create('cartItems', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('ticket_id')->constrained();
+            $table->foreignId('ticket_id')->default(null)->constrained();
             $table->foreignId('cart_id')->constrained();
+            $table->smallInteger('quantity')->default(1);
             $table->integer('count');
             $table->float('price')->unique();
             $table->float('total');
