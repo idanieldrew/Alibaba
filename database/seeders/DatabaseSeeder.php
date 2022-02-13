@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
         Contact::factory()->create();
 
         // Cart
-        $cart = $passengers->cart()->save(Cart::factory()->make());
+        $cart = $user->cart()->save(Cart::factory()->make());
 
         $cart->cartItems()->save(CartItem::factory()->make([
             'ticket_id' => $ticket->id

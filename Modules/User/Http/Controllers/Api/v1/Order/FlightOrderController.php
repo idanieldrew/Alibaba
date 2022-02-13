@@ -3,8 +3,7 @@
 namespace Module\User\Http\Controllers\Api\v1\Order;
 
 use App\Http\Controllers\Controller;
-use Module\Flight\Entity\Flight;
-use Module\User\Repositories\UserRepository;
+use Module\User\Repositories\v1\UserRepository;
 
 class FlightOrderController extends Controller
 {

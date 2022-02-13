@@ -1,6 +1,6 @@
 <?php
 
-namespace Module\User\Repositories;
+namespace Module\User\Repositories\v1;
 
 use Module\Flight\Entity\Flight;
 use Module\Passenger\Http\Resources\v1\PassengerCollection;

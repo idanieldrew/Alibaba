@@ -30,9 +30,4 @@ class Passenger extends Model
     {
         return $this->belongsToMany(User::class,'passenger_user','passengerId');
     }
-
-    public function cart()
-    {
-        return $this->hasOne(Cart::class,'passengerId','identification_code');
-    }
 }
