@@ -17,8 +17,7 @@ class CreateCartItemsTable extends Migration
             $table->id('id');
             $table->foreignId('ticket_id')->default(null)->constrained();
             $table->foreignId('cart_id')->constrained();
-            $table->smallInteger('quantity')->default(1);
-            $table->integer('count');
+            $table->smallInteger('count')->default(1);
             $table->float('price')->unique();
             $table->float('total');
             $table->boolean('active');
