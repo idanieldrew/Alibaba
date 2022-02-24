@@ -6,11 +6,11 @@ use Illuminate\Support\ServiceProvider;
 class RelationServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Bootstrap any application services.
      *
      * @return void
      */
-    public function register()
+    public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
     }

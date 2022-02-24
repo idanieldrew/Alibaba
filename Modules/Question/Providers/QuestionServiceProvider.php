@@ -11,11 +11,11 @@ class QuestionServiceProvider extends ServiceProvider
     protected $namespace = 'Module\Question\Http\Controllers';
 
     /**
-     * Register any application services.
+     * Bootstrap any application services.
      *
      * @return void
      */
-    public function register()
+    public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
         $this->loadFactoriesFrom(__DIR__ . '/../Database/factories');
@@ -23,15 +23,5 @@ class QuestionServiceProvider extends ServiceProvider
             ->middleware('api')
             ->namespace($this->namespace)
             ->group( __DIR__. '/../Routes/question.php');
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
     }
 }

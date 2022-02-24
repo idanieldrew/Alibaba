@@ -13,7 +13,7 @@ class CartServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
         $this->loadFactoriesFrom(__DIR__ . '/../Database/factories');

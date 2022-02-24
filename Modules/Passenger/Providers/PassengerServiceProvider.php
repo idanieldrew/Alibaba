@@ -14,10 +14,9 @@ class PassengerServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function booy()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
-        $this->loadFactoriesFrom(__DIR__ . '/../Database/factories');
         Route::prefix('api')
             ->middleware('api')
             ->namespace($this->namespace)
