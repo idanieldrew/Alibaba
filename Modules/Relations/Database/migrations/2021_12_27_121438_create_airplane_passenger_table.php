@@ -18,8 +18,8 @@ class CreateAirplanePassengerTable extends Migration
             $table->unsignedBigInteger('airplane_id');
             $table->unsignedBigInteger('passenger_id');
 
-            $table->foreign('passenger_id')->references('identification_code')->on('passengers');
             $table->foreign('airplane_id')->references('code')->on('airplanes');
+            $table->foreign('passenger_id')->references('identification_code')->on('passengers');
 
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateAirplanePassengerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('airplane_user');
+        Schema::dropIfExists('airplane_passenger');
     }
 }

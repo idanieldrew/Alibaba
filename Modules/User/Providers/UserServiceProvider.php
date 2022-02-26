@@ -18,7 +18,6 @@ class UserServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
-        $this->loadFactoriesFrom(__DIR__ . '/../Database/factories');
         Route::prefix('api')
             ->middleware('api')
             ->namespace($this->namespace)

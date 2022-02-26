@@ -25,6 +25,23 @@ class Flight extends Model
         return FlightFactory::new();
     }
 
+
+    /**
+     * Scope a query to select flight
+     *
+     * @param  string $source
+     * @param string $destination
+     * @param  number $takeoff
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeSelect($query,$source,$destination,$takeoff)
+    {
+        return $query->where('source',$source)
+                ->orWhere('destination',$destination)
+                ->where('takeoff',$takeoff);
+    }
+
+    /* Start Relations */
     public function airplane()
     {
         return $this->belongsTo(Airplane::class,'flights','code');
@@ -34,4 +51,6 @@ class Flight extends Model
     {
         return $this->belongsToMany(Passenger::class,'flights','identification_code');
     }
+    /* End Relations */
+
 }

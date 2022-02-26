@@ -14,22 +14,12 @@ class PassengerServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function booy()
+    public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
         Route::prefix('api')
             ->middleware('api')
             ->namespace($this->namespace)
             ->group( __DIR__. '/../Routes/passenger.php');
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
     }
 }

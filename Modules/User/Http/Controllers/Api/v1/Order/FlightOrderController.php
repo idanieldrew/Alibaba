@@ -7,6 +7,12 @@ use Module\User\Repositories\v1\UserRepository;
 
 class FlightOrderController extends Controller
 {
+
+    /*
+     *  Select flight.
+     *
+     * @return void
+     */
     public function select(UserRepository $repository)
     {
         $source = request('source');

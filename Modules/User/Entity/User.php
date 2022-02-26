@@ -105,7 +105,7 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
-    // Start RELATIONS
+    /* Start Relations */
     public function airplanes()
     {
         return $this->belongsToMany(Airplane::class,'users','code');
@@ -130,4 +130,5 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasOne(Cart::class,'userId','phone');
     }
+    /* End Relations */
 }
